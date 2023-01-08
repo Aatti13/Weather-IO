@@ -21,5 +21,7 @@ An additional Light Mode Dark Mode
 
 Dev by: @aatti --> Aatti13
 
-Credits:
-Images: 
+Image Credits: Parvat Computer Technology
+YouTube: https://www.youtube.com/@parvatcomputertechnology
+No code has been taken from the video...
+***********************************************************
