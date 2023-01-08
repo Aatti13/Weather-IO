@@ -1,3 +1,33 @@
+'''
+WEATHER.IO
+--------------------------------------------------------------------------
+Image Credits: Parvat Computer Technology
+YouTube: https://www.youtube.com/@parvatcomputertechnology
+--------------------------------------------------------------------------
+I have only taken Pictures and a few hexcolor codes from the video...
+--------------------------------------------------------------------------
+Extra hexcodes got from Images...
+Link for hexcode finder: https://html-color-codes.info/colors-from-image/#
+--------------------------------------------------------------------------
+Video Link: https://www.youtube.com/watch?v=NCCYWIzN6hU 
+(The following code is an updated version with some additional features.)
+--------------------------------------------------------------------------
+Weather API: https://www.openweathermap.org (or) search operweatherapi
+--------------------------------------------------------------------------
+The Following Code does not contain any intentional errors...
+--------------------------------------------------------------------------
+No Lines of code have been deleted or omitted and the code is complete...
+--------------------------------------------------------------------------
+API Documentation: https://openweathermap.org/current
+--------------------------------------------------------------------------
+Done by: @aatti
+'''
+
+
+
+
+
+
 # Imports
 from datetime import datetime
 from tkinter import *
@@ -20,7 +50,7 @@ class Window:
         # Font Configuration
         self.leel_font = "Leelawadee UI Semilight"
         # API Key
-        self.key = "d121ea79ad3e657a62c044116209ab75"
+        self.key = "api-key"
         # Dark theme
         self.dark_colour = "#26242f"
         # --------------------------------------------------------------------------------------------------------------
@@ -33,6 +63,7 @@ class Window:
         # Weather API Request (https://openweatherapi.org)
         def get_weather():
             try:
+                
                 # Time Zone
                 city = text_field.get()
 
@@ -64,10 +95,11 @@ class Window:
                 max_temp = int(json_data['main']['temp_max']-273.15)
                 min_temp = int(json_data['main']['temp_min']-273.15)
 
-
+                # Temp Update
                 self.temp_label.config(text=(temp, "°"))
                 self.cond_label.config(text=(condition, "|", "FEELS", "LIKE", feels_like, "°"))
-
+                
+                # Temperature Readings
                 self.max_temp_label.config(text=f"MAX. TEMP: {max_temp}°")
                 self.min_temp_label.config(text=f"MIN. TEMP: {min_temp}°")
 
@@ -81,84 +113,116 @@ class Window:
             except Exception as e:
                 messagebox.showerror("Weather.IO", "Error 404 Not found...")
 
+        # --------------------------------------------------------------------------------------------------------------
         # Changing UI Theme
+        
         def theme_custom():
             if self.button_mode:
+                
+                # Change Button
                 self.theme_button.config(image=self.theme_image_dark_to_light, bg=self.dark_colour,
                                          activebackground=self.dark_colour)
+                
+                # Change Background
                 self.root.config(bg=self.dark_colour)
+                
+                # Weather IO Logo BG Change
                 self.weather_io_label.config(bg=self.dark_colour)
-
+                
+                # Temp Label Update BG
                 self.max_temp_label.config(bg=self.dark_colour)
                 self.min_temp_label.config(bg=self.dark_colour)
-
+                
+                # Terms Label Dark Mode
                 self.terms_label.config(bg=self.dark_colour, fg="white")
 
+                # Lower Box Dark Mode Updater
                 self.lower_box_label.config(bg=self.dark_colour)
                 self.wind_label.config(bg="#049ED9", border=0)
                 self.humidity_label.config(bg="#049ED9", border=0)
                 self.description_label.config(bg="#049ED9", border=0)
                 self.pressure_label.config(bg="#049ED9", border=0)
+                
+                # Lower Box Readings Dark Mode
                 self.a.config(bg="#049ED9", border=0)
                 self.b.config(bg="#049ED9", border=0)
                 self.c.config(bg="#049ED9", border=0)
                 self.d.config(bg="#049ED9", border=0)
 
+                # Weather Logo Label Dark Mode
                 self.weather_logo_label.config(bg=self.dark_colour, fg=self.dark_colour)
-
+                
+                # Search Bar Update Dark Mode
                 self.search_bar_label.config(bg=self.dark_colour, fg="#404040")
                 text_field.config(bg="#101010", fg="white")
                 self.search_logo_button.config(bg="#101010")
 
-
+                # Time Zone Dark Mode
                 self.name.config(bg=self.dark_colour)
                 self.clock.config(bg=self.dark_colour)
-
+                
+                # Temperature and Conditions Dark Mode
                 self.temp_label.config(bg=self.dark_colour)
                 self.cond_label.config(bg=self.dark_colour)
 
+                # Watermark Dark Mode
                 self.watermark.config(bg=self.dark_colour, fg="white")
 
                 self.button_mode = False
             else:
+                
+                # Change Button Dark Button
                 self.theme_button.config(image=self.theme_image_light_to_dark, bg="white", activebackground="white")
-
+                
+                # Change screen to Light Mode
                 self.root.config(bg="white")
 
+                # Change Weather IO to Light Mode
                 self.weather_io_label.config(bg="white", activebackground="white")
 
+                # Terms Labe to Light Mode
                 self.terms_label.config(bg="white", fg="black")
 
+                # Temperature Readings Light Mode
                 self.max_temp_label.config(bg="white")
                 self.min_temp_label.config(bg="white")
 
+                # Lower Box Labels Light Mode
                 self.lower_box_label.config(bg="white", activebackground="white")
                 self.wind_label.config(bg="#1CB6F0", border=0)
                 self.humidity_label.config(bg="#1CB6F0", border=0)
                 self.description_label.config(bg="#1CB6F0", border=0)
                 self.pressure_label.config(bg="#1CB6F0", border=0)
+                
+                # Lower Box Readings Light Mode
                 self.a.config(bg="#1CB6F0", border=0)
                 self.b.config(bg="#1CB6F0", border=0)
                 self.c.config(bg="#1CB6F0", border=0)
                 self.d.config(bg="#1CB6F0", border=0)
 
+                # Weather Logo Light Mode                
                 self.weather_logo_label.config(bg="white", fg="white")
 
+                # Search Bar Light Mode
                 self.search_bar_label.config(bg="white", fg="#101010")
                 text_field.config(fg="white", bg="#404040")
                 self.search_logo_button.config(bg="#404040", fg="#404040")
 
+                # Time Zone Change to Light Mode
                 self.name.config(bg="white")
                 self.clock.config(bg="white")
 
+                # Temperature & Conditions to Light Mode
                 self.temp_label.config(bg="white")
                 self.cond_label.config(bg="white")
 
+                # Watermark Light Mode
                 self.watermark.config(bg="white", fg=self.dark_colour)
 
                 self.button_mode = True
         # --------------------------------------------------------------------------------------------------------------
         # Images
+        
         '''
         1. Search box Image
         2. Search Button Image
@@ -319,6 +383,7 @@ class Window:
         text_field.focus()
         # --------------------------------------------------------------------------------------------------------------
         # Buttons
+        
         "Search Button"
         self.search_logo_button = Button(self.root, image=self.search_logo_image, bd=0, cursor="hand2", bg="#404040",
                                          command=get_weather)
