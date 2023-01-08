@@ -1,0 +1,21 @@
+# Requirements
+
+certifi==2022.12.7
+cffi==1.15.1
+charset-normalizer==2.1.1
+customtkinter==5.0.1
+darkdetect==0.7.1
+geographiclib==2.0
+geopy==2.3.0
+pytz==2022.7
+requests==2.28.1
+shiboken2==5.15.2.1
+timezonefinder==6.1.9
+urllib3==1.26.13
+numpy==1.23.5
+Pillow==9.3.0
+pycparser==2.21
+tkinter==8.5
+datetime
+_tkinter (for error checking)
+tkinter.messagebox==8.5
